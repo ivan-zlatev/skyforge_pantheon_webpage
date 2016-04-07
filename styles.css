@@ -1,0 +1,116 @@
+body{
+	background:#fff url(img/bg.gif) repeat-y center;
+	margin:0;
+	padding:0;
+}
+@font-face {
+	font-family: 'major-force';
+	src: url('majorforcelaserital.ttf'); /*http://www.dafont.com/major-force.font*/
+}
+#mainTable{
+	width:970px;
+	text-align:center;
+}
+/* left and right borders */
+#leftBorder{
+	width:25px;
+}
+#rightBorder{
+	width:25px;
+}
+/* first row - menu and login form */
+#tr1{
+	height:80px;
+}
+/* menu */
+#topMenu{
+	vertical-align: bottom;
+	text-align: left;
+}
+#menuHref{
+	color:#707070;
+	text-decoration:none;
+	font-size:32px;
+	font-family:major-force;
+}
+/* login form */
+#topLogin{
+	width:200px;
+	vertical-align: middle;
+	text-align: center;
+}
+input[id="loginInputs"] {
+	display: block;
+	margin: 0;
+	width: 185px;
+	height: 12px;
+	font-size: 10px;
+	margin-bottom: 0px;
+	background-color: #EEEEEE;
+}
+input[id="loginButtons"] {
+	width: 90px;
+	height: 20px;
+	font-size: 10px;
+	background:#ccc;
+	border:0 none;
+	display: block;
+	margin: 0;
+}
+/* second row - main */
+#tr2{
+	height: 500px;
+}
+#main{
+	vertical-align: middle;
+	text-align: center;
+}
+#currentTable{
+	width: 875px;
+	vertical-align: top;
+}
+#currentTableTop{
+	background:#AAA;
+}
+#currentTableBottom0{
+	background:#DDD;
+}
+#currentTableBottom1{
+	background:#FFF;
+}
+#currentTableBottom2{
+	background:#00FFFF;
+}
+#tableColumnSelector{
+	font-weight:bold;
+	text-decoration:none;
+	color:#333;
+}
+#tableColumnSelector:hover{
+	text-decoration: underline;
+}
+#dailyTable{
+	width: 875px;
+	vertical-align: top;
+}
+#statisticsTable{
+	width: 875px;
+	vertical-align: top;
+}
+/* third row - credits */
+#tr3{
+	vertical-align: middle;
+	text-align: center;
+	height:30px;
+}
+#credits{
+	vertical-align: middle;
+	text-align: center;
+}
+#separator{
+	height:1px;
+}
+.bar { width: 100%; border: 1px solid #000; }
+.percentage { background: #000; text-align:left; }
+/*  ---------------------------------------------------------------  */
+
