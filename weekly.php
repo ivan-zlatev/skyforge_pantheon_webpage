@@ -67,7 +67,7 @@
 ?>
 			</td>
 		</tr>
-<?
+<?php
 if(isset($_GET['week']) && isValidWeek($_GET['week']) && $_GET['week'] != "0")
 {
 		unset($time1);

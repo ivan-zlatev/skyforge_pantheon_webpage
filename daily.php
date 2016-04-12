@@ -67,7 +67,7 @@ else
 				?>
 			</td>
 		</tr>
-<?
+<?php
 if(isset($_GET['date']) && validateDate($_GET['date']))
 {
 		unset($time1);

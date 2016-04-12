@@ -94,7 +94,6 @@ if(isset($_GET['week']) && isValidWeek($_GET['week']) && $_GET['week'] != "0")
 			$dataArray2["academy"] = ($dataArray2["academy"] + 1);
 		}
 	}
-}
 ?>
 		<tr>
 			<td style="text-align: left;" >Total Members:</td><?php $key = 'members'; $key = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); ?>
@@ -159,6 +158,9 @@ if(isset($_GET['week']) && isValidWeek($_GET['week']) && $_GET['week'] != "0")
 				</div>
 			</td>
 		</tr>
+<?php
+}
+?>
 	</form>
 </table>
 
