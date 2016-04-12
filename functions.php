@@ -181,6 +181,12 @@ function isValidPage($p)
 		case "lfg":
 			return True;
 			break;
+		case "Register":
+			return True;
+			break;
+		case "logout":
+			return True;
+			break;
 		default:
 			return False;
 	}

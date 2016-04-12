@@ -109,7 +109,7 @@ while ($row = mysql_fetch_array($result))
 		<td colspan='7'>&nbsp;</td>
 	</tr>
 	<tr>
-		<td colspan='7' style='text-align:left'>The data is from <?php echo gmdate('Y-m-d H:i:s', $tmp ); ?> GMT</td>
+		<td colspan='7' style='text-align:left'>The data is from <?php echo gmdate('Y-m-d H:i:s', $tmp ); ?> GMT, <?php echo number_format((float)(time() - $tmp)/3600, 1, '.', '') . " hours ago"; ?></td>
 	</tr>
 <?php
 }

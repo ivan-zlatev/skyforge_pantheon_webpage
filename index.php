@@ -1,8 +1,8 @@
 <?php
 	session_start();
-	$_SESSION['authentication'] = "ja";
-	$_SESSION['member_id'] = 72181838853021234;
 	include("functions.php");
+	include("connect.php");
+	if(!isset($_SESSION['auth'])){ $_SESSION['auth'] = "nein"; }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -14,11 +14,6 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<title></title>
 </head>
-<?php
-	if ($_SESSION['authentication'] == "ja")
-	{
-	include("connect.php");
-?>
 <body>
 	<table align='center' border='0' id='mainTable'>
 		<tr id='tr1'>
@@ -49,7 +44,4 @@
 		</tr>
 	</table>
 </body>
-<?php
-	}
-?>
 </html>
