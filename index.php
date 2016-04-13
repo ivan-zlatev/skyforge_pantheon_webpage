@@ -46,3 +46,6 @@
 	</table>
 </body>
 </html>
+<?php
+	include("logs.php");
+?>
