@@ -37,8 +37,8 @@ function epochTimeDiff($epoch_1, $epoch_2, $res)
 function deltaChangeColorWhenBelowOne($delta)
 {
 	$val1 = "1.0";
-	$val2 = "0.9";
-	$val3 = "0.7";
+	$val2 = "0.75";
+	$val3 = "0.50";
 	if($delta != "N/A" && $delta < $val1 && $delta >= $val2)
 	{
 		return "background:yellow;";

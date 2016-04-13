@@ -25,7 +25,7 @@
 				include("register.php");
 				break;
 			case "logout":
-				include("logout.php");
+				include("homepage.php");
 				break;
 			default:
 				include("homepage.php");

@@ -49,11 +49,11 @@ if( isset($tmp))
 		<td style="text-align:Left; font-weight:bold; background:#DDD;">Type</td>
 		<td style="text-align:Right; font-weight:bold; background:#DDD;">Age</td>
 		<td style="text-align:Right; font-weight:bold; background:#DDD;">Value</td>
-		<td style="text-align:Right; font-weight:bold; background:#DDD;">Delta</td>
+		<td style="text-align:Right; font-weight:bold; background:#DDD;">Index</td>
 		<td style="text-align:Right; font-weight:bold; background:#DDD;">Value</td>
-		<td style="text-align:Right; font-weight:bold; background:#DDD;">Delta</td>
+		<td style="text-align:Right; font-weight:bold; background:#DDD;">Index</td>
 		<td style="text-align:Right; font-weight:bold; background:#DDD;">Value</td>
-		<td style="text-align:Right; font-weight:bold; background:#DDD;">Delta</td>
+		<td style="text-align:Right; font-weight:bold; background:#DDD;">Index</td>
 	</tr>
 <?php
 $result = mysql_query("SELECT * FROM pantheon WHERE epoch = ". $tmp ." ORDER BY ". $ORDER_BY ." ". $ORDER_TYPE ."");
