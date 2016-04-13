@@ -186,11 +186,11 @@ if(isset($_GET['date']) && validateDate($_GET['date']))
 			<tr id='" . $background . "'>
 				<td style='text-align:right'>" . $i . ".</td>
 				<td style='text-align:left'><a href='https://eu.portal.sf.my.com/wall/". $member["0"] ."' style='text-decoration:none;color:#000;'>". $member["1"] ."</a></td>
-				<td style='text-align:right'>" . $member["4"] . "</td>
+				<td style='text-align:right'>" . number_format($member["4"]) . "</td>
 				<td style='text-align:right'>" . $member["5"] . " %</td>
-				<td style='text-align:right'>" . $member["8"] . "</td>
+				<td style='text-align:right'>" . number_format($member["8"]) . "</td>
 				<td style='text-align:right'>" . $member["9"] . " %</td>
-				<td style='text-align:right'>" . $member["12"] . "</td>
+				<td style='text-align:right'>" . number_format($member["12"]) . "</td>
 				<td style='text-align:right'>" . $member["13"] . " %</td>
 			</tr>
 				";
