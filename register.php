@@ -1,38 +1,49 @@
 <?php
-        if(isset($_POST['authuser']) && isset($_POST['authpass']) && $_POST['member_id'] != "0")
+        if(isset($_POST['authuser']) && isset($_POST['authpass']) && $_POST['member_id'] != "0") 
         {
-		$hash = password_hash($_POST['authpass'] . $_POST['authuser'], PASSWORD_BCRYPT);
-		$result = mysql_query("SELECT * FROM pantheon_register WHERE member_id = '" . $_POST['member_id'] . "' OR username = '" . $_POST['authuser'] . "'");
-		$exists = False;
-		while($row = mysql_fetch_array($result))
+		if( checkFormEntry($_POST['authuser']) && checkFormEntry($_POST['authpass']))
 		{
-			echo "User already registered";
-			$exists = True;
-		}
-		if(!$exists)
-		{
-			$result = mysql_query("INSERT INTO pantheon_register (member_id, username, password) VALUES ('" . $_POST['member_id'] . "', '" . $_POST['authuser'] . "', '" . $hash . "') ");
-			echo "Username " . $_POST['authuser'] . " assigned to " . $_POST['member_id'] ;
-			$_SESSION['auth'] = "ja";
-			$_SESSION['member_id'] = $_POST['member_id'];
+			$hash = password_hash($_POST['authpass'] . $_POST['authuser'], PASSWORD_BCRYPT);
+			$result = mysql_query("SELECT * FROM pantheon_register WHERE member_id = '" . htmlspecialchars($_POST['member_id']) . "' OR username = '" . htmlspecialchars($_POST['authuser']) . "'");
+			$exists = False;
+			while($row = mysql_fetch_array($result))
+			{
+				echo "User already registered";
+				$exists = True;
+			}
+			if(!$exists)
+			{
+				$result = mysql_query("INSERT INTO pantheon_register (member_id, username, password) VALUES ('" . htmlspecialchars($_POST['member_id']) . "', '" . htmlspecialchars($_POST['authuser']) . "', '" . $hash . "') ");
+				echo "Username " . htmlspecialchars($_POST['authuser']) . " assigned to " . htmlspecialchars($_POST['member_id']) ;
+				$_SESSION['auth'] = "ja";
+				$_SESSION['member_id'] = htmlspecialchars($_POST['member_id']);
 
+			}
+		}
+		else
+		{
+			print $_SESSION['checkFormEntry'];
 		}
         }
 	else
 	{
-?><table border='1' cellpadding='0' cellspacing='0' align='center' width='800px'> 
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+?>
+<table border='0' cellpadding='0' cellspacing='5' align='center' width='700px'> 
+        <form action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="post">
+		<tr height='25px'>
+			<td colspan='2'>&nbsp;</td>
+		</tr>
                 <tr align='center' height='25px'>
-                        <td> Username: </td>
-                        <td><input type="text" name="authuser" /></td>
+                        <td style="text-align:right;width:280px"> Username: </td>
+                        <td style="color:red;text-align:left;"><input type="text" name="authuser" />* Required</td>
                 </tr>
                 <tr align='center' height='25px'>
-                        <td> Password: </td>
-                        <td><input type="password" name="authpass" /></td>
+                        <td style="text-align:right;"> Password: </td>
+                        <td style="color:red;text-align:left;"><input type="password" name="authpass" />* Required</td>
                 </tr>
 		<tr>
-			<td> Avatar Name: </td>
-			<td>
+			<td style="text-align:right;"> Avatar Name: </td>
+			<td style="color:red;text-align:left;">
 				<input type="hidden" name="p" value="homepage" />
 				<select name="member_id">
 					<option value='0'>Select Avatar Name</option>
@@ -64,6 +75,7 @@
 			}
 ?>
 				</select>
+				* Required
 			</td>
 		</tr>
                 <tr align='center'>
