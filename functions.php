@@ -218,30 +218,32 @@ function setDataArraysForStatistics()
 	return $array;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/////////////////////////////////////////////////////////////////////////////
+function checkFormEntry($data)
+{
+	$max    = 20;
+	$string = $data;
+	$_SESSION['checkFormEntry'] = "";
+	
+	// RegEx 
+	if (preg_match('/[^a-zA-Z0-9]/', $string)){
+		$_SESSION['checkFormEntry'] = 'only letters and numbers are allowed, no spaces or special characters';
+		return False;
+	} 
+	
+	// Check a value i provided
+	$len = strlen($string);
+	if ($len == 0) {
+		$_SESSION['checkFormEntry'] = 'you must provide a value';
+		return False;
+	}
+	
+	// Check the string length
+	if ($len > $max) {
+		$_SESSION['checkFormEntry'] = 'the value cannot be longer than ' . $max;
+		return False;
+	}
+	return True;
+}
 
 ?>
