@@ -108,7 +108,7 @@ if(isset($_GET['week']) && isValidWeek($_GET['week']) && $_GET['week'] != "0")
 		</tr>
 		<tr>
 			<td style="text-align: left;" >Prestige:</td><?php $key = 'prestige'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
-                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+                        <td style='text-align:right;'><?php echo number_format($key_value); ?></td>
 			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
@@ -118,7 +118,7 @@ if(isset($_GET['week']) && isValidWeek($_GET['week']) && $_GET['week'] != "0")
 		</tr>
 		<tr>
 			<td style="text-align: left;" >Credits:</td><?php $key = 'credits'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
-                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+                        <td style='text-align:right;'><?php echo number_format($key_value); ?></td>
 			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
@@ -128,7 +128,7 @@ if(isset($_GET['week']) && isValidWeek($_GET['week']) && $_GET['week'] != "0")
 		</tr>
 		<tr>
 			<td style="text-align: left;" >Construction Resources:</td><?php $key = 'resources'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
-                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+                        <td style='text-align:right;'><?php echo number_format($key_value); ?></td>
 			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
@@ -138,7 +138,7 @@ if(isset($_GET['week']) && isValidWeek($_GET['week']) && $_GET['week'] != "0")
 		</tr>
 		<tr>
 			<td style="text-align: left;" >Colaboration Points:</td><?php $key = 'colaboration'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
-                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+                        <td style='text-align:right;'><?php echo number_format($key_value); ?></td>
 			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
