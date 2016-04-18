@@ -2,7 +2,7 @@
 
 	<form action="<?php $_SERVER['PHP_SELF']; ?>" id="statisticsDateForm" method='GET'>
 		<tr>
-			<td align="left" colspan='3'>
+			<td align="left" colspan='4'>
 				<input type="hidden" name="p" value="statistics" />
 				<select name="week" onchange="this.form.submit()">
 					<option value="0">Select Week</option>
@@ -36,6 +36,7 @@
 		<tr>
 			<td width="200px">&nbsp;</td>
 			<td width="70px">&nbsp;</td> 
+			<td width="70px">&nbsp;</td>
 			<td>&nbsp;</td>
 		</tr>
 <?php
@@ -96,65 +97,72 @@ if(isset($_GET['week']) && isValidWeek($_GET['week']) && $_GET['week'] != "0")
 	}
 ?>
 		<tr>
-			<td style="text-align: left;" >Total Members:</td><?php $key = 'members'; $key = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); ?>
-			<td style="text-align: left;"><?php echo number_format((float)$key, 2, '.', '') . "%"; ?></td>
+			<td style="text-align: left;" >Total Members:</td><?php $key = 'members'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
+                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
-					<div class="percentage" style="width:<?php echo $key; ?>%; color:#FFFFFF">&nbsp;</div>
+                                        <div class="percentage" style="width:<?php if($key_percent >= 0) echo $key_percent; else echo 0; ?>%; color:#FFFFFF">&nbsp;</div>
 				</div>
 			</td>
 		</tr>
 		<tr>
-			<td style="text-align: left;" >Prestige:</td><?php $key = 'prestige'; $key = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); ?>
-			<td style="text-align: left;"><?php echo number_format((float)$key, 2, '.', '') . "%"; ?></td>
+			<td style="text-align: left;" >Prestige:</td><?php $key = 'prestige'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
+                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
-					<div class="percentage" style="width:<?php echo $key; ?>%; color:#FFFFFF">&nbsp;</div>
+                                        <div class="percentage" style="width:<?php if($key_percent >= 0) echo $key_percent; else echo 0; ?>%; color:#FFFFFF">&nbsp;</div>
 				</div>
 			</td>
 		</tr>
 		<tr>
-			<td style="text-align: left;" >Credits:</td><?php $key = 'credits'; $key = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); ?>
-			<td style="text-align: left;"><?php echo number_format((float)$key, 2, '.', '') . "%"; ?></td>
+			<td style="text-align: left;" >Credits:</td><?php $key = 'credits'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
+                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
-					<div class="percentage" style="width:<?php echo $key; ?>%; color:#FFFFFF">&nbsp;</div>
+                                        <div class="percentage" style="width:<?php if($key_percent >= 0) echo $key_percent; else echo 0; ?>%; color:#FFFFFF">&nbsp;</div>
 				</div>
 			</td>
 		</tr>
 		<tr>
-			<td style="text-align: left;" >Construction Resources:</td><?php $key = 'resources'; $key = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); ?>
-			<td style="text-align: left;"><?php echo number_format((float)$key, 2, '.', '') . "%"; ?></td>
+			<td style="text-align: left;" >Construction Resources:</td><?php $key = 'resources'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
+                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
-					<div class="percentage" style="width:<?php echo $key; ?>%; color:#FFFFFF">&nbsp;</div>
+                                        <div class="percentage" style="width:<?php if($key_percent >= 0) echo $key_percent; else echo 0; ?>%; color:#FFFFFF">&nbsp;</div>
 				</div>
 			</td>
 		</tr>
 		<tr>
-			<td style="text-align: left;" >Colaboration Points:</td><?php $key = 'colaboration'; $key = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); ?>
-			<td style="text-align: left;"><?php echo number_format((float)$key, 2, '.', '') . "%"; ?></td>
+			<td style="text-align: left;" >Colaboration Points:</td><?php $key = 'colaboration'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
+                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
-					<div class="percentage" style="width:<?php echo $key; ?>%; color:#FFFFFF">&nbsp;</div>
+                                        <div class="percentage" style="width:<?php if($key_percent >= 0) echo $key_percent; else echo 0; ?>%; color:#FFFFFF">&nbsp;</div>
 				</div>
 			</td>
 		</tr>
 		<tr>
-			<td style="text-align: left;" >Members:</td><?php $key = 'member'; $key = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); ?>
-			<td style="text-align: left;"><?php echo number_format((float)$key, 2, '.', '') . "%"; ?></td>
+			<td style="text-align: left;" >Members:</td><?php $key = 'member'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
+                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
-					<div class="percentage" style="width:<?php echo $key; ?>%; color:#FFFFFF">&nbsp;</div>
+                                        <div class="percentage" style="width:<?php if($key_percent >= 0) echo $key_percent; else echo 0; ?>%; color:#FFFFFF">&nbsp;</div>
 				</div>
 			</td>
 		</tr>
 		<tr>
-			<td style="text-align: left;" >Academy:</td><?php $key = 'academy'; $key = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); ?>
-			<td style="text-align: left;"><?php echo number_format((float)$key, 2, '.', '') . "%"; ?></td>
+			<td style="text-align: left;" >Academy:</td><?php $key = 'academy'; $key_percent = ((($dataArray1[$key] - $dataArray2[$key])/$dataArray1[$key]) * 100 ); $key_value = $dataArray1[$key] - $dataArray2[$key]; ?>
+                        <td style='text-align:right;'><?php echo $key_value; ?></td>
+			<td style="text-align:right;"><?php echo number_format((float)$key_percent, 2, '.', '') . "%"; ?></td>
 			<td>
 				<div class="bar">
-					<div class="percentage" style="width:<?php echo $key; ?>%; color:#FFFFFF">&nbsp;</div>
+					<div class="percentage" style="width:<?php if($key_percent >= 0) echo $key_percent; else echo 0; ?>%; color:#FFFFFF">&nbsp;</div>
 				</div>
 			</td>
 		</tr>

@@ -58,6 +58,22 @@ input[id="loginButtons"] {
 	margin: 0;
 }
 /* second row - main */
+#homepageTable1Col1{
+	text-align:left;
+	height: 30px;
+	font-weight:bold;
+	width: 230px;
+}
+#homepageTable1Col2{
+	text-align:left;
+	width: 280px;
+	color:#666;
+}
+#homepageTable1Col3{
+	text-align:right;
+	color:#666;
+	border=2px;
+}
 #tr2{
 	height: 500px;
 }

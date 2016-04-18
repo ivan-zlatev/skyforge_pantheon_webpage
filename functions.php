@@ -246,4 +246,10 @@ function checkFormEntry($data)
 	return True;
 }
 
+/////////////////////////////////////////////////////////////////////////////
+function getPlayerAge($member_id)
+{
+	$result = mysql_query("SELECT * FROM pantheon_age WHERE member_id = '" . $member_id . "' ORDER BY age DESC LIMIT 1") or die(mysql_error());
+	while($row = mysql_fetch_array($result)){ return $row{'age'}; }
+}
 ?>
