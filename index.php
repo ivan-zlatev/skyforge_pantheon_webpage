@@ -14,7 +14,7 @@
 	<meta name="keywords" content="Skyforge,Pantheon">
 	<meta name="author" content="gadman">
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<title></title>
+	<title>Essence</title>
 </head>
 <body>
 	<table align='center' border='0' id='mainTable'>

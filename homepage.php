@@ -68,7 +68,6 @@
                 <td id='homepageTable1Col2'>
 <!-- Commanders --!>
 Dimo Vasilev <br />
-Emma Sokolov <br />
 Goddesss Maya <br />
 Lillantha Aethar <br />
 Xatt Uss

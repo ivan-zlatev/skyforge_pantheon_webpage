@@ -1,5 +1,8 @@
 <table border='0' align='center' id='currentTable'>
 <?php
+	include("pantheon_requirements.php");
+?>
+<?php
 	//execute the SQL query and return records
 	$result = mysql_query("SELECT * FROM pantheon_log WHERE status = 1 ORDER BY epoch DESC LIMIT 1");
 	while($row = mysql_fetch_array($result)){ $tmp = $row{"epoch"};}
